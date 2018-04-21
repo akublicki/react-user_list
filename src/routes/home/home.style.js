@@ -14,7 +14,6 @@ export const UserLoginBox = styled.div`
     width: 500px;
 `;
 
-
 export const UserImput = styled.input`
     border: 1px solid ${colors.light};
     margin-top: 15px;
@@ -31,4 +30,8 @@ export const UserButton = styled.button`
     &:hover {
         background: ${colors.light};
     }
+`;
+
+export const UsersContainer = styled.div`
+    
 `;

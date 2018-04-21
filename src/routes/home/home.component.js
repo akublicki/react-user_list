@@ -1,7 +1,13 @@
 import React, {Component} from 'react';
 import Header from '../../components/header/header.component';
 import Footer from '../../components/footer/footer.component';
-import {Container, UserLoginBox, UserImput, UserButton} from './home.style';
+import {
+    Container,
+    UserLoginBox,
+    UserImput,
+    UserButton,
+    UsersContainer,
+} from './home.style';
 import {Wrapper} from "../../utils/styles/global.style";
 
 class Home extends Component {
@@ -33,6 +39,8 @@ class Home extends Component {
             )
     };
 
+    renderUsers = () => this.state.users.map( user => <div key={user}>{user}</div> );
+
     render() {
         return (
             <Container>
@@ -45,6 +53,9 @@ class Home extends Component {
                                 Add user
                             </UserButton>
                     </UserLoginBox>
+                    <UsersContainer>
+                        {this.renderUsers()}
+                    </UsersContainer>
                 </Wrapper>
                 <Footer/>
             </Container>

@@ -4,6 +4,7 @@ import {colors} from "../../utils/styles/color.style";
 export const Container = styled.footer`
     color: ${colors.light};
     font-size: 13px;
+    margin-top: 20px;
     text-align: center;
     
     & > div {
