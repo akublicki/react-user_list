@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
-import {Foot} from './footer.style';
+import {Container} from './footer.style';
+import {Wrapper} from "../../utils/styles/global.style";
 
 class Footer extends Component {
     render() {
         return (
-            <Foot>
-                Footer
-            </Foot>
+            <Container>
+                <Wrapper>
+                    © Copyright 2018 - Andrzej Kublicki
+                </Wrapper>
+            </Container>
         );
     }
 }
