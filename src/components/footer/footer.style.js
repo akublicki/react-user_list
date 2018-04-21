@@ -3,7 +3,7 @@ import {colors} from "../../utils/styles/color.style";
 
 export const Container = styled.footer`
     color: ${colors.light};
-    font-size: 18px;
+    font-size: 13px;
     text-align: center;
     
     & > div {
