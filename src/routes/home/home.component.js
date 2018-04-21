@@ -9,6 +9,7 @@ import {
     UsersContainer,
 } from './home.style';
 import {Wrapper} from "../../utils/styles/global.style";
+import {Link} from 'react-router-dom';
 
 class Home extends Component {
     state = {
@@ -39,7 +40,7 @@ class Home extends Component {
             )
     };
 
-    renderUsers = () => this.state.users.map( user => <div key={user}>{user}</div> );
+    renderUsers = () => this.state.users.map( user => <Link to={`/user/${user}`}>{user}</Link> );
 
     render() {
         return (
