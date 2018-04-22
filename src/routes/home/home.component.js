@@ -40,7 +40,7 @@ class Home extends Component {
             )
     };
 
-    renderUsers = () => this.state.users.map( user => <Link to={`/user/${user}`}>{user}</Link> );
+    renderUsers = () => this.state.users.map( user => <div><Link to={`/user/${user}`}>{user}</Link></div> );
 
     render() {
         return (

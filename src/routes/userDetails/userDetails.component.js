@@ -3,15 +3,28 @@ import Header from '../../components/header/header.component';
 import Footer from '../../components/footer/footer.component';
 import {Wrapper} from "../../utils/styles/global.style";
 import {Container} from "./userDetails.style";
+import {githubConfig} from "../../config/config";
 
 class UserDetails extends Component {
-    state = {};
+    state = {
+        details: {},
+    };
+
+    componentDidMount(){
+        fetch(githubConfig.apiUrl + '/users/' + this.props.match.params.user_name + '??client_id=' + githubConfig.clientId + '&client_secreted' + githubConfig.clientSecreted)
+        .then(res => res.json())
+            .then(result => this.setState({
+                details: result,
+            }))
+    }
 
     render() {
         return (
             <Container>
                 <Header/>
-                {this.props.match.params.user_name}
+                <Wrapper>
+                    {this.props.match.params.user_name}
+                </Wrapper>
                 <Footer/>
             </Container>
         );
