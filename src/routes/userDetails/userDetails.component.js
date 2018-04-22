@@ -10,11 +10,14 @@ class UserDetails extends Component {
         details: {},
     };
 
-    componentDidMount(){
-        fetch(githubConfig.apiUrl + '/users/' + this.props.match.params.user_name + '??client_id=' + githubConfig.clientId + '&client_secreted' + githubConfig.clientSecreted)
-        .then(res => res.json())
+    componentDidMount() {
+        fetch(githubConfig.apiUrl + '/users/' + this.props.match.params.user_name + '??client_id=' + githubConfig.clientId + '&client_secret=' + githubConfig.clientSecreted)
+            .then(res => res.json())
             .then(result => this.setState({
                 details: result,
+            }))
+            .catch(() => this.setState({
+                wrongUser: true,
             }))
     }
 
@@ -24,6 +27,7 @@ class UserDetails extends Component {
                 <Header/>
                 <Wrapper>
                     {this.props.match.params.user_name}
+                    {console.log(this.state.details)}
                 </Wrapper>
                 <Footer/>
             </Container>
