@@ -11,9 +11,7 @@ class UserDetails extends Component {
         return (
             <Container>
                 <Header/>
-                <Wrapper>
-                    {this.props.match.params.user_name}
-                </Wrapper>
+                {this.props.match.params.user_name}
                 <Footer/>
             </Container>
         );
